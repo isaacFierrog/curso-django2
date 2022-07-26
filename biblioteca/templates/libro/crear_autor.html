@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+
+{% block title %}
+    Creacion de autores
+{% endblock %}
+
+{% block body %}
+    {% if error %}
+        <h2>{{ error }}</h2>
+    {% else %}
+        <form method="post">
+            {% csrf_token %}
+            {{ autor_form.as_p }}
+        </form>
+    {% endif %}
+{% endblock %}
